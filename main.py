@@ -1,0 +1,20 @@
+from db_checker import checking_syntactic_similarity, checking_phonetic_similarity
+from db_cleaning import (copy_excel_file, db_cleaning,
+                         db_filtering_by_sign_type_and_status, db_filtering_by_syntactic_and_phonetic_similarity)
+
+original_file = '_SIC_INFO.xlsx'
+backup_file = '_FILTER_BY_BRAND_RESULT.xlsx'
+brand_to_compare = 'CLASTOZ'
+
+# Create backup copy
+copy_excel_file(original_file, backup_file)
+# Cleaning
+db_cleaning(original_file, backup_file)
+# Filtering by sign type and status
+db_filtering_by_sign_type_and_status(backup_file, 'Marca', 'Registrada')
+# Syntactic similarity calculation
+checking_syntactic_similarity(backup_file, brand_to_compare)
+# Syntactic phonetic calculation
+checking_phonetic_similarity(backup_file, brand_to_compare)
+#Filtering by syntactic and phonetic similarity
+db_filtering_by_syntactic_and_phonetic_similarity(backup_file, brand_to_compare)
