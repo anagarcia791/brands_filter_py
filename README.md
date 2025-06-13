@@ -44,3 +44,9 @@
 6. Ejecutar el archivo main, una vez la información de linea 5 y 6 coinciden dar click en el botón de ejcución de python
 
      ![ejecucion](https://raw.githubusercontent.com/anagarcia791/brands_filter_py/refs/heads/main/assets/images/ejecucion.png)
+
+7. Una vez termine la ejecución, verá un archivo excel generado en el folder del proyecto
+
+     ![resultado](https)
+
+8. Recuerde hacer limpieza del folder. Siempre que termine una ejecución elimine los archivos excel agregados/generados
