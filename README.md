@@ -32,13 +32,14 @@
      brand_to_compare = 'CLASTOZ'
    
      original_file = 'CLASTOZ.xlsx'
+   
+     ![main](https://raw.githubusercontent.com/anagarcia791/brands_filter_py/refs/heads/main/assets/images/main.png)
+   
    - para cambiar de empresa se sigue el mismo formato, ej:
    
      brand_to_compare = 'EMPRESA_X'
    
      original_file = 'EMPRESA_X.xlsx'
-
-     ![main](https://raw.githubusercontent.com/anagarcia791/brands_filter_py/refs/heads/main/assets/images/main.png)
 
 6. Ejecutar el archivo main, una vez la información de linea 5 y 6 coinciden dar click en el botón de ejcución de python
 
