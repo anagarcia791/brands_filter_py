@@ -47,6 +47,6 @@
 
 7. Una vez termine la ejecución, verá un archivo excel generado en el folder del proyecto
 
-     ![resultado](https)
+     ![resultado](https://raw.githubusercontent.com/anagarcia791/brands_filter_py/refs/heads/main/assets/images/resultado.png)
 
 8. Recuerde hacer limpieza del folder. Siempre que termine una ejecución elimine los archivos excel agregados/generados
