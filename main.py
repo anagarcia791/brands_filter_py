@@ -3,7 +3,7 @@ from db_cleaning import (copy_excel_file, db_cleaning,
                          db_filtering_by_sign_type_and_status, db_filtering_by_syntactic_and_phonetic_similarity)
 
 brand_to_compare = 'CLASTOZ'
-original_file = '_SIC_INFO.xlsx'
+original_file = 'CLASTOZ.xlsx'
 backup_file = f'_FILTER_BY_BRAND_RESULT_{brand_to_compare}.xlsx'
 
 # Create backup copy

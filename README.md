@@ -1,0 +1,41 @@
+# Buscador de similitud fonética y sintáctica de marcas
+
+## Dependencias
+   Instalación de [python](https://www.python.org/)
+
+   IDE (Integrated Development Environment) de preferencia, recomendado [visual studio](https://code.visualstudio.com/)
+
+
+## Uso
+1. Descargar el proyecto
+
+   ![descarga](https)
+
+2. Ambientar python y descargar el IDE
+3. Dentro de la carpeta descargada agregar un archivo con nombre descriptivo, ej:
+
+   ![archivos por defecto](https)
+
+   ![excel agregado](https)
+
+4. Abrir el folder del proyecto en el IDE de preferencia
+
+   ![visual](https)
+
+5. Abrir el archivo main
+   - cambiar la linea 5 y 6 con la informacion respectiva, ej:
+   
+     brand_to_compare = 'CLASTOZ'
+   
+     original_file = 'CLASTOZ.xlsx'
+   - para cambiar de empresa se sigue el mismo formato, ej:
+   
+     brand_to_compare = 'EMPRESA_X'
+   
+     original_file = 'EMPRESA_X.xlsx'
+
+     ![main](https)
+
+6. Ejecutar el archivo main, una vez la información de linea 5 y 6 coinciden dar click en el botón de ejcución de python
+
+     ![ejecucion](https)
