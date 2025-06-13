@@ -9,18 +9,22 @@
 ## Uso
 1. Descargar el proyecto
 
-   ![descarga](https)
+   ![descarga](https://raw.githubusercontent.com/anagarcia791/brands_filter_py/refs/heads/main/assets/images/descarga.png)
 
 2. Ambientar python y descargar el IDE
 3. Dentro de la carpeta descargada agregar un archivo con nombre descriptivo, ej:
 
-   ![archivos por defecto](https)
+   img antes de agregar archivo:
 
-   ![excel agregado](https)
+   ![archivos por defecto](https://raw.githubusercontent.com/anagarcia791/brands_filter_py/refs/heads/main/assets/images/files.png)
+
+   img después de agregar archivo:
+
+   ![excel agregado](https://raw.githubusercontent.com/anagarcia791/brands_filter_py/refs/heads/main/assets/images/excel_added.png)
 
 4. Abrir el folder del proyecto en el IDE de preferencia
 
-   ![visual](https)
+   ![visual](https://raw.githubusercontent.com/anagarcia791/brands_filter_py/refs/heads/main/assets/images/visual.png)
 
 5. Abrir el archivo main
    - cambiar la linea 5 y 6 con la informacion respectiva, ej:
@@ -34,8 +38,8 @@
    
      original_file = 'EMPRESA_X.xlsx'
 
-     ![main](https)
+     ![main](https://raw.githubusercontent.com/anagarcia791/brands_filter_py/refs/heads/main/assets/images/main.png)
 
 6. Ejecutar el archivo main, una vez la información de linea 5 y 6 coinciden dar click en el botón de ejcución de python
 
-     ![ejecucion](https)
+     ![ejecucion](https://raw.githubusercontent.com/anagarcia791/brands_filter_py/refs/heads/main/assets/images/ejecucion.png)
