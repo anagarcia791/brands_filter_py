@@ -18,7 +18,7 @@ def checking_syntactic_similarity(destination_file, brand_to_compare):
         result = is_anagram(standardized_brand, worksheet.cell(row=row, column=2).value)
         worksheet.cell(row=row, column=new_column_index, value=result)
 
-    worksheet.cell(row=1, column=new_column_index + 1, value=f"Overlap percentage with {standardized_brand}")
+    worksheet.cell(row=1, column=new_column_index + 1, value=f"Syntactic overlap percentage with {standardized_brand}")
 
     for row in range(2, worksheet.max_row + 1):
         result = overlap_percentage(standardized_brand, worksheet.cell(row=row, column=2).value)
@@ -39,6 +39,20 @@ def checking_phonetic_similarity(destination_file, brand_to_compare):
 
     for row in range(2, worksheet.max_row + 1):
         result = get_total_phonetic_score(standardized_brand, worksheet.cell(row=row, column=2).value)
+        worksheet.cell(row=row, column=new_column_index, value=result)
+
+    workbook.save(destination_file)
+
+# Mean value
+def mean_value_calculation(destination_file):
+    workbook = load_workbook(destination_file)
+    worksheet = workbook['Filtered_Data']
+
+    new_column_index = worksheet.max_column + 1
+    worksheet.cell(row=1, column=new_column_index, value=f"Mean value calculation of syntactic and fonetic result")
+
+    for row in range(2, worksheet.max_row + 1):
+        result = (worksheet.cell(row=row, column=10).value + worksheet.cell(row=row, column=11).value) / 2
         worksheet.cell(row=row, column=new_column_index, value=result)
 
     workbook.save(destination_file)

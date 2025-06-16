@@ -69,7 +69,7 @@ def standardization_for_brands(destination_file):
 # Filtering db by syntactic and phonetic similarity
 def db_filtering_by_syntactic_and_phonetic_similarity(destination_file, brand_to_compare):
     df_to_filter = pd.read_excel(destination_file, sheet_name='Filtered_Data')
-    filtered_data = df_to_filter[df_to_filter[f'Overlap percentage with {brand_to_compare}'] > 60]
+    filtered_data = df_to_filter[df_to_filter[f'Syntactic overlap percentage with {brand_to_compare}'] > 60]
     filtered_data = filtered_data[filtered_data[f'Phonetic similarity percentage with {brand_to_compare}'] > 60]
 
     workbook = load_workbook(destination_file)
