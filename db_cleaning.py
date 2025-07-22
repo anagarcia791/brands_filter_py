@@ -53,17 +53,20 @@ def db_filtering_by_sign_type_and_status(destination_file, sign_type, status):
     standardization_for_brands(destination_file)
 
 
-# Brands standardized
-def standardization_for_brands(destination_file):
-    workbook = load_workbook(destination_file)
-    worksheet = workbook['Filtered_Data']
+# Filtering db by mean value between 50 and 60
+def db_filtering_by_mean_value_between_50_and_60(destination_file):
+    df_to_filter = pd.read_excel(destination_file, sheet_name='Filtered_Data')
+    filtered_data = df_to_filter[df_to_filter[f'Mean value calculation of syntactic and fonetic result'] >= 50]
+    filtered_data = filtered_data[filtered_data[f'Mean value calculation of syntactic and fonetic result'] <= 60]
 
-    for row in range(2, worksheet.max_row + 1):
-        cell = worksheet[f'B{row}']
-        if cell.value is not None:
-            cell.value = word_standardization(cell.value)
+    workbook = load_workbook(destination_file)
+    new_sheet = workbook.create_sheet(title="Results between 50 and 60")
+
+    for row in dataframe_to_rows(filtered_data, index=False, header=True):
+        new_sheet.append(row)
 
     workbook.save(destination_file)
+    standardization_for_brands(destination_file)
 
 
 # Filtering db by syntactic and phonetic similarity
@@ -80,3 +83,34 @@ def db_filtering_by_syntactic_and_phonetic_similarity(destination_file, brand_to
 
     workbook.save(destination_file)
     standardization_for_brands(destination_file)
+
+
+# Final filter
+def final_filter(destination_file, brand_to_compare):
+    df_to_filter = pd.read_excel(destination_file, sheet_name=f'Result for {brand_to_compare}')
+
+    df_after_delete = df_to_filter.drop(df_to_filter.columns[[0, 3, 8, 9, 10, 11]], axis=1)
+
+    df_after_delete.columns = ['NAME', 'TRADEMARK TYPE', 'STATUS', 'CLASS', 'HOLDER', 'EXPIRE DATE', 'RISK']
+
+    workbook = load_workbook(destination_file)
+    new_sheet = workbook.create_sheet(title="Sheet to deliver")
+
+    for row in dataframe_to_rows(df_after_delete, index=False, header=True):
+        new_sheet.append(row)
+
+    workbook.save(destination_file)
+    standardization_for_brands(destination_file)
+
+
+# Brands standardized
+def standardization_for_brands(destination_file):
+    workbook = load_workbook(destination_file)
+    worksheet = workbook['Filtered_Data']
+
+    for row in range(2, worksheet.max_row + 1):
+        cell = worksheet[f'B{row}']
+        if cell.value is not None:
+            cell.value = word_standardization(cell.value)
+
+    workbook.save(destination_file)

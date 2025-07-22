@@ -43,6 +43,7 @@ def checking_phonetic_similarity(destination_file, brand_to_compare):
 
     workbook.save(destination_file)
 
+
 # Mean value
 def mean_value_calculation(destination_file):
     workbook = load_workbook(destination_file)
@@ -53,6 +54,28 @@ def mean_value_calculation(destination_file):
 
     for row in range(2, worksheet.max_row + 1):
         result = (worksheet.cell(row=row, column=10).value + worksheet.cell(row=row, column=11).value) / 2
+        worksheet.cell(row=row, column=new_column_index, value=result)
+
+    workbook.save(destination_file)
+
+
+# Risk perception
+def risk_perception(destination_file):
+    workbook = load_workbook(destination_file)
+    worksheet = workbook['Filtered_Data']
+
+    new_column_index = worksheet.max_column + 1
+    worksheet.cell(row=1, column=new_column_index, value=f"Risk perception")
+
+    for row in range(2, worksheet.max_row + 1):
+        result = ""
+        row_value = worksheet.cell(row=row, column=12).value
+        if row_value > 79:
+            result = "HIGH"
+        elif 55 < row_value < 80:
+            result = "MEDIUM"
+        else:
+            result = "LOW"
         worksheet.cell(row=row, column=new_column_index, value=result)
 
     workbook.save(destination_file)
